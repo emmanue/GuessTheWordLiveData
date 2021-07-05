@@ -54,34 +54,40 @@ class GameFragment : Fragment() {
         // Get the viewModel
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
+        //bound the data in the viewModel to the data binding
+        binding.gameViewModel = viewModel
+
+        //This is used so that the binding can observe LiveData update
+        binding.lifecycleOwner = viewLifecycleOwner
+
         // Observer for the game finished event
         viewModel.eventGameFinish.observe(viewLifecycleOwner, Observer<Boolean> { hasFinished -> if (hasFinished) gameFinished() })
 
         // Attach an observer object to LiveData object for the current score
-        viewModel.score.observe(viewLifecycleOwner, Observer { newScore -> binding.scoreText.text = newScore.toString() })
+//        viewModel.score.observe(viewLifecycleOwner, Observer { newScore -> binding.scoreText.text = newScore.toString() })
 
         // Attach an observer object to the LiveData object for the current word
-        viewModel.word.observe(viewLifecycleOwner, Observer { newWord -> binding.wordText.text = newWord })
+//        viewModel.word.observe(viewLifecycleOwner, Observer { newWord -> binding.wordText.text = newWord })
 
-        binding.correctButton.setOnClickListener { onCorrect() }
-        binding.skipButton.setOnClickListener { onSkip() }
-        binding.endGameButton.setOnClickListener { onEndGame() }
+//        binding.correctButton.setOnClickListener { onCorrect() }
+//        binding.skipButton.setOnClickListener { onSkip() }
+//        binding.endGameButton.setOnClickListener { onEndGame() }
 
         return binding.root
     }
 
     /** Methods for buttons presses **/
 
-    private fun onSkip() {
-        viewModel.onSkip()
-    }
-    private fun onCorrect() {
-        viewModel.onCorrect()
-    }
-
-    private fun onEndGame() {
-        gameFinished()
-    }
+//    private fun onSkip() {
+//        viewModel.onSkip()
+//    }
+//    private fun onCorrect() {
+//        viewModel.onCorrect()
+//    }
+//
+//    private fun onEndGame() {
+//        gameFinished()
+//    }
 
     /** Methods for updating the UI **/
 
