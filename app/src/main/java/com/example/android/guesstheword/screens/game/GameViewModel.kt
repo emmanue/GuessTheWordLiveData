@@ -43,7 +43,7 @@ class GameViewModel : ViewModel() {
     }
 
     // The current word
-    //Convert word dat into LiveData objects and encapsulation
+    //Convert word data into LiveData objects and encapsulation
     private val _word = MutableLiveData<String>()
     val word: LiveData<String>
     get() = _word

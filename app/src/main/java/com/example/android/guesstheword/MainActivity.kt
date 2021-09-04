@@ -22,6 +22,8 @@ import androidx.appcompat.app.AppCompatActivity
 /**
  * Creates an Activity that hosts all of the fragments in the app
  */
+ 
+ // Following best practices
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
